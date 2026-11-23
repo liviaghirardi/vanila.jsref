@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogo da Forca</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game">
+    <header>
+      <h1>Jogo da Forca</h1>
+      <p class="placar">
+        Vitórias: <strong id="vitorias">0</strong> ·
+        Derrotas: <strong id="derrotas">0</strong>
+      </p>
+    </header>
+
+    <section class="tabuleiro">
+      <svg class="forca" viewBox="0 0 200 250" aria-label="Desenho da forca">
+        <!-- estrutura -->
+        <line x1="20" y1="230" x2="120" y2="230" />
+        <line x1="60" y1="230" x2="60" y2="20" />
+        <line x1="60" y1="20" x2="150" y2="20" />
+        <line x1="150" y1="20" x2="150" y2="50" />
+        <!-- boneco (aparece a cada erro) -->
+        <circle class="parte" cx="150" cy="70" r="20" />
+        <line class="parte" x1="150" y1="90" x2="150" y2="150" />
+        <line class="parte" x1="150" y1="105" x2="125" y2="130" />
+        <line class="parte" x1="150" y1="105" x2="175" y2="130" />
+        <line class="parte" x1="150" y1="150" x2="130" y2="185" />
+        <line class="parte" x1="150" y1="150" x2="170" y2="185" />
+      </svg>
+
+      <div class="info">
+        <p class="categoria">Categoria: <span id="categoria"></span></p>
+        <p id="palavra" class="palavra" aria-live="polite"></p>
+        <p class="tentativas">Erros: <span id="erros">0</span> / 6</p>
+        <p id="erradas" class="erradas"></p>
+      </div>
+    </section>
+
+    <section id="teclado" class="teclado" aria-label="Teclado"></section>
+
+    <div id="mensagem" class="mensagem" hidden>
+      <p id="mensagem-texto"></p>
+      <button id="reiniciar" type="button">Jogar novamente</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
